@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinestesia de Emociones</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="containercenter2">
+  <main>
+    <h2>Bienvenido</h2>
+    <p>¡Hola, <%= username %>! Esta es tu página de dashboard.</p>
+    <div class="logoutContainer"><a class="logoutButton" href="/logout">Cerrar sesión</a></div>
+      
+      <button id="emotionButton">Ingresa tus emociones de hoy</button>
+
+      
+      <form id="emotionForm" action="/dashboard/submit-emotions" method="POST" style="display: none;">
+          <h2>Cuestionario de emociones</h2>
+
+          
+          <label>El color que elijo para representar cómo me siento hoy es:</label>
+            <select name="color" id="color">
+              <option value="" disabled selected>Selecciona un color</option>
+                <option value="azul">Azul (calma, introspección)</option>
+                <option value="rojo">Rojo (pasión, intensidad)</option>
+                <option value="amarillo">Amarillo (alegría, energía)</option>
+                <option value="verde">Verde (equilibrio, serenidad)</option>
+                <option value="morado">Morado (misterio, creatividad)</option>
+            </select><br>
+
+            <!-- Pregunta 2: Forma -->
+            <label>La forma que describiría mi día es:</label>
+            <select name="shape" id="shape">
+              <option value="" disabled selected>Selecciona una forma</option>
+                <option value="circulo">Círculo (fluidez, unidad)</option>
+                <option value="cuadrado">Cuadrado (estructura, estabilidad)</option>
+                <option value="triangulo">Triángulo (ambición, energía)</option>
+                <option value="espiral">Espiral (confusión, cambio)</option>
+                <option value="línea">Línea recta (dirección, claridad)</option>
+            </select><br>
+
+            <!-- Pregunta 3: Textura -->
+            <label>El movimiento de las formas con la que<br>asocio a mis emociones hoy es:</label>
+            <select name="movement" id="movement">
+              <option value="" disabled selected>Selecciona una movimiento</option>
+              <option value="estatico">Estático</option>
+              <option value="oscilante">Oscilante</option>
+              <option value="rebote">Rebote</option>
+              <option value="rotacion">Rotación</option>
+            </select><br>
+
+            <!-- Pregunta 4: Sonido -->
+            <label for="size">Tamaño de la emoción:</label>
+              <select id="size" name="size">
+                <option value="" disabled selected>Selecciona una tamaño</option>
+                <option value="50">10%</option>
+                <option value="75">25%</option>
+                <option value="100">50%</option>
+                <option value="125">75%</option>
+                <option value="150">100%</option>
+             </select>
+
+            <br>
+          
+          <button type="submit">Enviar respuestas</button>
+      </form>
+  </div>
+
+  <script>
+      document.getElementById("emotionButton").addEventListener("click", function() {
+    const form = document.getElementById("emotionForm");
+    form.classList.add("show");
+    form.style.display = "block";
+});
+</script>
+  </main>
+</div>
+  <%- include('partials/footer') %>
+</body>
+</html>

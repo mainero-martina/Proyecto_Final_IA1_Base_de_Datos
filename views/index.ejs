@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinestesia de Emociones</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h2>Bienvenido a Sinestesia de Emociones</h2>
+    <p>Una experiencia visual colaborativa donde puedes expresar tus emociones a través de colores y formas.</p>
+    <div class="buttons">
+      <button onclick="location.href='/login'">Iniciar Sesión</button>
+      <button onclick="location.href='/register'">Crear Usuario</button>
+    </div> <br><br>
+    <p>Para ver la obra colaborativa sin iniciar sesion clickea aqui</p>
+    <button onclick="location.href='/project'">Ver el Sketch</button>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
