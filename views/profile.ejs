@@ -1,0 +1,27 @@
+<!-- views/profile.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+  <main>
+    <div class="containercenter">
+        <h1>Mi Perfil</h1>
+        <h2>Información Personal</h2>
+        <p><strong>Nombre:</strong> <%= user.name %> <%= user.surname %></p>
+        <p><strong>Edad:</strong> <%= user.age %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p><strong>Bio:</strong> <%= user.bio %></p>
+      </div>
+      <div class="buttons"><button onclick="location.href='/dashboard'">Volver al dashboard</button></div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

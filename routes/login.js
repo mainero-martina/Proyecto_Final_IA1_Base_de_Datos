@@ -21,6 +21,7 @@ router.post('/login', async (req, res) => {
         req.session.userId = user.id;
         req.session.username = user.username;
         const isProfileComplete = user.name && user.surname && user.age && user.bio;
+        
 
         
         if (!isProfileComplete) {
@@ -29,7 +30,7 @@ router.post('/login', async (req, res) => {
             res.redirect('/dashboard');  
         }
     } else {
-        res.render('login', { mensaje: 'Usuario o contraseña incorrectos' });
+        res.render('login', { mensaje: 'El usuario o ontraseña no existen o son incorrectos' });
     }
 });
 

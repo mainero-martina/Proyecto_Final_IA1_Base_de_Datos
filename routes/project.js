@@ -11,10 +11,6 @@ function checkAuth(req, res, next) {
     }
 }
 
-router.get('/', (req, res) => {
-    res.render('project');
-});
-
 router.get('/data', (req, res) => {
       const stmt = db.prepare(`SELECT 
             emotions.*, 
@@ -24,6 +20,12 @@ router.get('/data', (req, res) => {
       const data = stmt.all(); 
       res.json(data); 
   });
+
+  
+  router.get('/', (req, res) => {
+    const isLoggedIn = req.session && req.session.userId;
+    res.render('project', { user: isLoggedIn ? req.session.userId : null });
+});
 
 
 module.exports = router;

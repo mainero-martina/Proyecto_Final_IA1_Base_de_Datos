@@ -10,6 +10,9 @@ body {
 header {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 5%;
   }
   
   header nav ul {
@@ -28,7 +31,8 @@ header {
   
   header nav ul li a {
     color: #fff;
-    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 100;
   }
   
   header nav ul li a:hover {
@@ -137,7 +141,7 @@ input[type="text"], input[type="password"], input[type="email"],input[type="numb
 .logoutButton {
   padding: 10px 20px;
   background-color: #f44336; 
-  color: white;
+  color: white !important;
   border: none;
   border-radius: 5px;
   text-decoration: none; 

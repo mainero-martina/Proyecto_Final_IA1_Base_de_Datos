@@ -1,10 +1,17 @@
 <header>
-    <nav>
+  <nav>
       <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/about">Acerca de</a></li>
-        <li><a href="/contact">Contacto</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Acerca de</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          
+          <% if (isLoggedIn) { %>
+              <li><a href="/profile">Ver mi perfil</a></li>
+              <li><a class="logoutButton" href="/logout">Cerrar sesión</a></li>
+          <% } else { %>
+              <li><a href="/login">Iniciar sesión</a></li>
+              <li><a href="/register">Registrarse</a></li>
+          <% } %>
       </ul>
-    </nav>
-  </header>
-  
+  </nav>
+</header>

@@ -141,11 +141,12 @@ class UserData {
         default:
           ellipse(this.x, this.y, this.size, this.size);
       }
-      pop();
+      
       textSize(12);
         fill(0);
         textAlign(CENTER);
         text(this.name, this.x, this.y + this.size / 2 + 15);
+        pop();
     }
     drawSpiral(x, y, radius) {
       noFill();

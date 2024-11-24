@@ -10,7 +10,18 @@
 <body>
     <%- include('partials/header') %>
     <div class="containercenter">
-    <h1>Bienvenido al Sketch</h1>
+    <% if (user) { %>
+        <h1>Bienvenido a tu Sketch compartido</h1>
+        <div class="buttons"><button onclick="location.href='/dashboard'">Volver al dashboard</button></div><br>
+        <% } %>
+    
+    <% if (!user) { %>
+        <h1>Bienvenido al Sketch general</h1>
+      <p>Inicia sesión o crea un usuario para interactuar con el sketch.</p>
+      <div class="buttons">
+      <button onclick="location.href='/login'">Iniciar Sesión</button>
+      <button onclick="location.href='/register'">Crear Usuario</button></div><br>
+    <% } %>
     <div id="contenedor-canvas-p5"></div>
     <script type="text/javascript" src="/p5/p5.min.js"></script>
     <script type="text/javascript" src="/p5/addons/p5.sound.min.js"></script>

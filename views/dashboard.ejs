@@ -12,9 +12,8 @@
   <main>
     <h2>Bienvenido</h2>
     <p>¡Hola, <%= username %>! Esta es tu página de dashboard.</p>
-    <div class="logoutContainer"><a class="logoutButton" href="/logout">Cerrar sesión</a></div>
-      
-      <button id="emotionButton">Ingresa tus emociones de hoy</button>
+      <button id="emotionButton">Ingresa tus emociones de hoy</button><br><br>
+      <div class="buttons"><button onclick="location.href='/project'">Ver sketch antes de ingresar datos</button></div>
 
       
       <form id="emotionForm" action="/dashboard/submit-emotions" method="POST" style="display: none;">
@@ -31,7 +30,7 @@
                 <option value="morado">Morado (misterio, creatividad)</option>
             </select><br>
 
-            <!-- Pregunta 2: Forma -->
+            
             <label>La forma que describiría mi día es:</label>
             <select name="shape" id="shape">
               <option value="" disabled selected>Selecciona una forma</option>
@@ -42,7 +41,7 @@
                 <option value="línea">Línea recta (dirección, claridad)</option>
             </select><br>
 
-            <!-- Pregunta 3: Textura -->
+            <
             <label>El movimiento de las formas con la que<br>asocio a mis emociones hoy es:</label>
             <select name="movement" id="movement">
               <option value="" disabled selected>Selecciona una movimiento</option>
@@ -52,7 +51,7 @@
               <option value="rotacion">Rotación</option>
             </select><br>
 
-            <!-- Pregunta 4: Sonido -->
+            
             <label for="size">Tamaño de la emoción:</label>
               <select id="size" name="size">
                 <option value="" disabled selected>Selecciona una tamaño</option>
